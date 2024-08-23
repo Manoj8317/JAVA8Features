@@ -1,15 +1,45 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+interface shape{
+    abstract public void draw();
+}
+//all the below code is before functional programing
+//from after java 8 functional programming came into picture
+//class Rectangle implements shape{
+//    @Override
+//    public void draw() {
+//        System.out.println("rectangle drawn");
+//    }
+//}
+//
+//class Square implements shape{
+//    @Override
+//    public void draw() {
+//        System.out.println("rectangle drawn");
+//    }
+//}
+//
+//class Circle implements shape{
+//    @Override
+//    public void draw() {
+//        System.out.println("Circle drawn");
+//    }
+//}
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+public class Main {
+    public static void main(String[] args)
+    {
+//        Circle c=new Circle();
+//        c.draw();
+        shape circle = () -> System.out.println("Circle drawn");
+        shape rectangle = () -> System.out.println("rectangle drawn");
+        shape square = () -> System.out.println("Square drawn");
+        print(circle);
+        print(rectangle);
+        print(square);
+    }
+
+    private static void print(shape s){
+        s.draw();
     }
 }
